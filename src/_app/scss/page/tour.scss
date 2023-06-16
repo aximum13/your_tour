@@ -1,0 +1,236 @@
+.tour {
+  text-align: center;
+
+  &__tabs {
+    margin-top: 40px;
+
+    @media (max-width: $tablet) {
+      margin-top: 30px;
+    }
+  }
+
+  .tabs {
+    &__list {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+
+      @media (max-width: $mobile) {
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+    }
+
+    &__item {
+      border: none;
+      border-bottom: 1px solid transparent;
+      background-color: transparent;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        border-bottom: 1px solid $black;
+      }
+
+      &_active {
+        border-bottom: 1px solid $orange200;
+        color: $orange200;
+
+        &:hover {
+          border-bottom: 1px solid $orange200;
+        }
+      }
+    }
+
+    &__content {
+      margin-top: 100px;
+
+      @media (max-width: $tablet) {
+        margin-top: 50px;
+      }
+    }
+
+    &__block {
+      display: none;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+
+      @media (max-width: $desktop) {
+        gap: 18px;
+      }
+
+      &_active {
+        display: flex;
+      }
+    }
+
+    &__card {
+      flex: 0 0 31.6%;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      padding: 50px 50px 40px;
+      border-radius: 50px;
+      min-height: 530px;
+      text-align: left;
+      background-repeat: no-repeat;
+      background-size: 200% 100%;
+      background-position: center;
+      transition: background-size 0.3s ease-in-out;
+
+      &:hover {
+        background-size: 220% 120%;
+      }
+
+      &_vertical {
+        background-size: 100% 100%;
+
+        &:hover {
+          background-size: 120% 120%;
+        }
+      }
+
+      @media (max-width: $desktop) {
+        flex: 0 0 49%;
+        background-size: 180% 100%;
+
+        &:hover {
+          background-size: 200% 120%;
+        }
+
+        &_vertical {
+          background-size: 100% 126%;
+
+          &:hover {
+            background-size: 120% 146%;
+          }
+        }
+      }
+
+      @media (max-width: $tablet) {
+        flex: 0 0 48%;
+        padding: 24px 24px 20px;
+        border-radius: 20px;
+        min-height: 318px;
+        background-size: cover;
+        background-position: center;
+
+        &:hover {
+          background-size: cover;
+        }
+      }
+
+      @media (max-width: $mobile) {
+        flex: 0 0 100%;
+      }
+
+      .card {
+        &__title {
+          color: $white;
+        }
+
+        &__text {
+          margin-top: 16px;
+          color: $white;
+        }
+
+        &__link {
+          position: relative;
+          margin-top: auto;
+          padding: 6px 60px 6px 0;
+          border-radius: 50px;
+          width: fit-content;
+          color: $white;
+          transition: all 0.3s ease;
+
+          &::before {
+            content: url(/assets/img/svg/arrow-white.svg);
+            position: absolute;
+            right: 20px;
+            display: block;
+            width: 22px;
+            height: 26px;
+          }
+        }
+      }
+      &:hover .card__link {
+        background-color: $green400;
+        padding-left: 20px;
+        @media (max-width: $tablet) {
+          background-color: transparent;
+          padding-left: 0px;
+        }
+      }
+
+      &:active .card__link {
+        background-color: $orange200;
+
+        @media (max-width: $tablet) {
+          background-color: transparent;
+        }
+      }
+
+      &_1 {
+        background-image: linear-gradient(
+            360deg,
+            rgba(0, 0, 0, 0.4) 0%,
+            rgba(0, 0, 0, 0.06) 48.44%,
+            rgba(0, 0, 0, 0.5) 100%
+          ),
+          url(/assets/img/tour-img-1.jpg);
+      }
+
+      &_2 {
+        background-image: linear-gradient(
+            360deg,
+            rgba(0, 0, 0, 0.4) 0%,
+            rgba(0, 0, 0, 0.06) 48.44%,
+            rgba(0, 0, 0, 0.5) 100%
+          ),
+          url(/assets/img/tour-img-2.jpg);
+      }
+
+      &_3 {
+        background-image: linear-gradient(
+            360deg,
+            rgba(0, 0, 0, 0.4) 0%,
+            rgba(0, 0, 0, 0.06) 48.44%,
+            rgba(0, 0, 0, 0.5) 100%
+          ),
+          url(/assets/img/tour-img-3.jpg);
+      }
+
+      &_4 {
+        background-image: linear-gradient(
+            360deg,
+            rgba(0, 0, 0, 0.4) 0%,
+            rgba(0, 0, 0, 0.06) 48.44%,
+            rgba(0, 0, 0, 0.5) 100%
+          ),
+          url(/assets/img/tour-img-4.jpg);
+      }
+
+      &_5 {
+        background-image: linear-gradient(
+            360deg,
+            rgba(0, 0, 0, 0.4) 0%,
+            rgba(0, 0, 0, 0.06) 48.44%,
+            rgba(0, 0, 0, 0.5) 100%
+          ),
+          url(/assets/img/tour-img-5.jpg);
+      }
+
+      &_6 {
+        background-image: linear-gradient(
+            360deg,
+            rgba(0, 0, 0, 0.4) 0%,
+            rgba(0, 0, 0, 0.06) 48.44%,
+            rgba(0, 0, 0, 0.5) 100%
+          ),
+          url(/assets/img/tour-img-6.jpg);
+      }
+    }
+  }
+}

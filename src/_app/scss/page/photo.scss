@@ -1,0 +1,168 @@
+.photo {
+  text-align: center;
+
+  &__container.container {
+    padding-left: 30px;
+    padding-right: 30px;
+    max-width: 100%;
+
+    @media (max-width: $desktop) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  &__title {
+    margin: 0 auto;
+  }
+
+  &__text {
+    margin: 30px auto 0;
+    max-width: 40%;
+    color: $gray300;
+
+    @media (max-width: $desktop) {
+      margin-top: 24px;
+      max-width: 46%;
+    }
+
+    @media (max-width: $tablet) {
+      max-width: 100%;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-rows: repeat(3, 300px);
+    gap: 30px;
+    margin-top: 100px;
+
+    @media (max-width: $desktop) {
+      grid-template-rows: repeat(3, 300px);
+    }
+
+    @media (max-width: $tablet) {
+      grid-template-rows: repeat(3, 200px);
+      gap: 18px;
+      margin-top: 50px;
+    }
+
+    @media (max-width: $mobile) {
+      grid-template-rows: repeat(3, 110px);
+    }
+  }
+
+  &__block {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+
+    @media (max-width: $desktop) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    @media (max-width: $tablet) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    &_big {
+      grid-template-columns: repeat(5, 1fr);
+
+      @media (max-width: $desktop) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      @media (max-width: $tablet) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
+
+      .photo__img {
+        background-position: center;
+      }
+    }
+
+    &_bottom {
+      @media (max-width: $tablet) {
+        gap: 10px;
+      }
+    }
+  }
+
+  &__card {
+    flex: 0 0 23%;
+    border-radius: 50px;
+
+    @media (max-width: $tablet) {
+      border-radius: 20px;
+    }
+  }
+
+  &__img {
+    border-radius: 50px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    &_1 {
+      background-image: url(/assets/img/travel-img-1.jpg);
+    }
+
+    &_2 {
+      background-image: url(/assets/img/travel-img-2.jpg);
+    }
+    &_3 {
+      background-image: url(/assets/img/travel-img-3.jpg);
+    }
+    &_4 {
+      background-image: url(/assets/img/travel-img-4.jpg);
+    }
+    &_5 {
+      background-image: url(/assets/img/travel-img-5.jpg);
+    }
+    &_6 {
+      background-image: url(/assets/img/travel-img-6.jpg);
+    }
+    &_7 {
+      background-image: url(/assets/img/travel-img-7.jpg);
+    }
+    &_8 {
+      background-image: url(/assets/img/travel-img-8.jpg);
+    }
+    &_9 {
+      background-image: url(/assets/img/travel-img-9.jpg);
+    }
+    &_10 {
+      background-image: url(/assets/img/travel-img-10.jpg);
+    }
+
+    &_11 {
+      background-image: url(/assets/img/travel-img-11.jpg);
+    }
+
+    &_12 {
+      background-image: url(/assets/img/travel-img-12.jpg);
+    }
+
+    &_13 {
+      background-image: url(/assets/img/travel-img-13.jpg);
+    }
+
+    @media (max-width: $desktop) {
+      background-size: cover;
+      &_desktop {
+        display: none;
+      }
+    }
+
+    @media (max-width: $tablet) {
+      border-radius: 20px;
+
+      &_tablet {
+        display: none;
+      }
+    }
+  }
+}

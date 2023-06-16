@@ -1,0 +1,121 @@
+.header {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  color: $white;
+  transition: all 0.3s ease-in-out;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 88px;
+
+    &.container {
+      @media (max-width: $desktop) {
+        padding-left: 56px;
+        padding-right: 56px;
+      }
+
+      @media (max-width: $tablet) {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+  }
+
+  .logo {
+    @media (max-width: $tablet) {
+      &__img {
+        max-width: 132px;
+      }
+    }
+  }
+
+  .menu {
+    @media (max-width: $tablet) {
+      &.tablet {
+        display: none;
+      }
+    }
+
+    &__list {
+      display: flex;
+      gap: 50px;
+
+      @media (max-width: $desktop) {
+        gap: 30px;
+      }
+    }
+
+    &__link {
+      border-bottom: 1px solid transparent;
+      font-size: 20px;
+      // color: $white;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        border-color: $white;
+      }
+    }
+  }
+
+  .tel {
+    &__link {
+      font-size: 20px;
+      // color: $white;
+
+      @media (max-width: $tablet) {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 142%;
+      }
+    }
+  }
+
+  &.fixed {
+    position: fixed;
+    top: 0;
+    background: rgba(243, 239, 232, 0.6);
+    backdrop-filter: blur(27px);
+    transition: all .3s ease-in-out;
+
+    .logo__img {
+      filter: brightness(0.1);
+    }
+
+    .menu__link {
+      color: $black;
+
+      &:hover {
+        border-color: $black;
+      }
+    }
+
+    .tel__link {
+      color: $black;
+    }
+  }
+
+  &.no-fixed {
+    position: fixed;
+    top: -88px;
+    transition: all 0.3s ease-in-out;
+
+    .logo__img {
+      filter: brightness(0.1);
+    }
+
+    .menu__link {
+      color: $black;
+
+      &:hover {
+        border-color: $black;
+      }
+    }
+
+    .tel__link {
+      color: $black;
+    }
+  }
+}

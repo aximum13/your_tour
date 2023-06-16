@@ -1,0 +1,336 @@
+.request {
+  text-align: center;
+
+  &__text {
+    margin: 32px auto 0;
+    max-width: 34%;
+    color: $gray300;
+
+    @media (max-width: $desktop) {
+      margin-top: 36px;
+      max-width: 400px;
+    }
+
+    @media (max-width: $tablet) {
+      margin-top: 20px;
+      max-width: 400px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 100px;
+    padding: 70px;
+    border-radius: 50px;
+    background: $white;
+
+    @media (max-width: $desktop) {
+      padding: 60px;
+    }
+
+    @media (max-width: $tablet) {
+      margin-top: 40px;
+      padding: 20px 20px 40px;
+      border-radius: 30px;
+    }
+  }
+
+  .form {
+    &__block {
+      display: flex;
+      gap: 30px;
+      margin-top: 32px;
+      width: 100%;
+
+      @media (max-width: $desktop) {
+        margin-top: 30px;
+        gap: 20px;
+      }
+      @media (max-width: $tablet) {
+        gap: 30px;
+      }
+
+      @media (max-width: $mobile) {
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      &_top {
+        margin-top: 0;
+      }
+
+      &_btn {
+        @media (max-width: $desktop) {
+          gap: 30px;
+        }
+
+        @media (max-width: $tablet) {
+          flex-direction: row;
+          gap: 10px;
+        }
+      }
+
+      &_radio {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      &_checkbox {
+        @media (max-width: $desktop) {
+          margin-top: 34px;
+        }
+
+        @media (max-width: $tablet) {
+          margin-top: 26px;
+        }
+      }
+    }
+
+    &__label {
+      flex: 0 0 48.6%;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+
+      @media (max-width: $mobile) {
+        flex: 0 0 auto;
+      }
+
+      &_comment {
+        flex: 0 0 100%;
+      }
+
+      &_radio {
+        display: inline-block;
+        cursor: pointer;
+
+        &:last-child {
+          margin-left: 30px;
+        }
+      }
+
+      &_checkbox {
+        flex: 0 0 100%;
+        color: $gray300;
+      }
+    }
+
+    &__input {
+      margin-top: 8px;
+      padding: 20px;
+      border: 1px solid $beige200;
+      border-radius: 10px;
+      background-color: $beige100;
+      color: $black;
+      transition: all 0.3s ease-in-out;
+
+      @media (max-width: $tablet) {
+        padding: 10px;
+      }
+
+      &_select {
+        position: relative;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+        background-image: url(/assets/img/svg/dropdown.svg);
+        background-repeat: no-repeat;
+        background-position: 96% center;
+        color: $gray300;
+        cursor: pointer;
+      }
+
+      &_comment {
+        @media (max-width: $tablet) {
+          min-height: 132px;
+        }
+      }
+
+      &_radio {
+        display: none;
+
+        & + span {
+          position: relative;
+          padding-left: 36px;
+          transition: all 0.3s ease-in-out;
+
+          @media (max-width: $tablet) {
+            padding-left: 30px;
+          }
+        }
+
+        & + span::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          display: block;
+          border: 2px solid $black;
+          border-radius: 50%;
+          width: 26px;
+          height: 26px;
+
+          @media (max-width: $tablet) {
+            width: 20px;
+            height: 20px;
+          }
+        }
+
+        &:checked + span::after {
+          content: "";
+          position: absolute;
+          top: 7px;
+          left: 7px;
+          display: block;
+          border-radius: 50%;
+          width: 12px;
+          height: 12px;
+          background-color: $black;
+          
+          @media (max-width: $tablet) {
+            top: 5px;
+            left: 5px;
+            width: 10px;
+            height: 10px;
+          }
+        }
+      }
+
+      &_checkbox {
+        display: none;
+
+        & + span {
+          position: relative;
+          padding-left: 36px;
+          transition: all 0.3s ease-in-out;
+
+          @media (max-width: $tablet) {
+            text-align: left;
+            padding-left: 30px;
+          }
+        }
+
+        & + span::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: block;
+          border: 2px solid $black;
+          border-radius: 5px;
+          width: 26px;
+          height: 26px;
+
+          @media (max-width: $tablet) {
+            width: 20px;
+            height: 20px;
+          }
+        }
+
+        &:checked + span::after {
+          content: url(/assets/img/svg/check.svg);
+          position: absolute;
+          top: 0px;
+          left: 7px;
+          display: block;
+          width: 12px;
+          height: 12px;
+
+          @media (max-width: $tablet) {
+            left: 4px;
+          }
+        }
+      }
+
+      &:hover {
+        background-color: $beige200;
+      }
+
+      &:focus-visible {
+        background-color: $beige200;
+        border: 1px solid $gray300;
+      }
+
+      &::-moz-placeholder {
+        color: $gray300;
+      }
+      &::-webkit-input-placeholder {
+        color: $gray300;
+      }
+      &:-ms-input-placeholder {
+        color: $gray300;
+      }
+      &::-ms-input-placeholder {
+        color: $gray300;
+      }
+      &::placeholder {
+        color: $gray300;
+      }
+    }
+
+    &__option {
+      color: $black;
+      &_disabled {
+        color: $gray300;
+      }
+    }
+
+    &__text {
+      width: 100%;
+      text-align: left;
+    }
+
+    &__group {
+      display: block;
+      text-align: left;
+    }
+
+    &__link {
+      border-bottom: 1px solid transparent;
+      color: $black;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        border-bottom: 1px solid $black;
+      }
+
+      &:active {
+        border-bottom: 1px solid $green400;
+        color: $green400;
+      }
+    }
+
+    &__btn {
+      padding: 15px 70px;
+      border: none;
+      border-radius: 10px;
+      background-color: $green400;
+      color: $white;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+      @media (max-width: $tablet) {
+        padding: 12px 30px;
+      }
+
+      &:hover {
+        background-color: $green300;
+      }
+      &:active {
+        background-color: $green200;
+      }
+
+      &_reset {
+        background-color: $green100;
+        color: $green400;
+
+        &:hover {
+          background-color: $gray100;
+        }
+        &:active {
+          background-color: $gray200;
+        }
+      }
+    }
+  }
+}

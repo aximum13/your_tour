@@ -1,0 +1,267 @@
+.story {
+  text-align: center;
+
+  &__text {
+    margin: 30px auto 0;
+    max-width: 40%;
+    color: $gray300;
+
+    @media (max-width: $desktop) {
+      margin-top: 34px;
+      max-width: 46%;
+    }
+
+    @media (max-width: $tablet) {
+      margin-top: 20px;
+      max-width: 100%;
+    }
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-top: 100px;
+
+    @media (max-width: $tablet) {
+      margin-top: 50px;
+      gap: 22px;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 60px;
+    min-height: 568px;
+    border-radius: 50px;
+    color: $white;
+    background-repeat: no-repeat;
+    text-align: left;
+    transition: all 0.3s ease-in-out;
+
+    @media (max-width: $desktop) {
+      padding-bottom: 54px;
+    }
+
+    @media (max-width: $tablet) {
+      padding: 30px 24px 26px 30px;
+      border-radius: 20px;
+      min-height: 454px;
+    }
+
+    &_1 {
+      background-image: linear-gradient(
+          270deg,
+          rgba(0, 0, 0, 0) 0.01%,
+          rgba(0, 0, 0, 0.2) 100%
+        ),
+        url(/assets/img/story-img-1.jpg);
+
+      background-size: 100% 150%;
+      background-position: center;
+
+      &:hover {
+        background-size: 120% 170%;
+      }
+
+      @media (max-width: $desktop) {
+        background-size: 100% 116%;
+        background-position: center;
+
+        &:hover {
+          background-size: 120% 136%;
+        }
+      }
+
+      @media (max-width: $tablet) {
+        background-size: cover;
+
+        &:hover {
+          background-size: cover;
+        }
+      }
+    }
+    &_2 {
+      background-image: linear-gradient(
+          270deg,
+          rgba(0, 0, 0, 0) 0.01%,
+          rgba(0, 0, 0, 0.2) 100%
+        ),
+        url(/assets/img/story-img-2.jpg);
+
+      background-size: 100% 140%;
+      background-position: center;
+
+      &:hover {
+        background-size: 120% 160%;
+      }
+
+      @media (max-width: $desktop) {
+        background-size: 100% 108%;
+        background-position: center;
+
+        &:hover {
+          background-size: 120% 128%;
+        }
+      }
+
+      @media (max-width: $tablet) {
+        background-size: cover;
+
+        &:hover {
+          background-size: cover;
+        }
+      }
+    }
+    &_3 {
+      background-image: linear-gradient(
+          270deg,
+          rgba(0, 0, 0, 0) 0.01%,
+          rgba(0, 0, 0, 0.2) 100%
+        ),
+        url(/assets/img/story-img-3.jpg);
+      background-size: 100% 140%;
+      background-position: center;
+
+      &:hover {
+        background-size: 120% 160%;
+      }
+
+      @media (max-width: $desktop) {
+        background-size: 100% 106%;
+        background-position: center;
+
+        &:hover {
+          background-size: 120% 126%;
+        }
+      }
+
+      @media (max-width: $tablet) {
+        background-size: cover;
+
+        &:hover {
+          background-size: cover;
+        }
+      }
+    }
+  }
+
+  .card {
+    &__group {
+      display: flex;
+      justify-content: space-between;
+      &_top {
+        max-width: 56%;
+        flex-direction: column;
+
+        @media (max-width: $desktop) {
+          max-width: 74%;
+        }
+
+        @media (max-width: $tablet) {
+          max-width: 100%;
+        }
+      }
+
+      &_bottom {
+        align-items: center;
+      }
+    }
+
+    &__title {
+      color: $white;
+
+      @media (max-width: $tablet) {
+        max-width: 60%;
+      }
+    }
+
+    &__text {
+      margin-top: 36px;
+
+      @media (max-width: $tablet) {
+        margin-top: 24px;
+      }
+    }
+
+    &__list {
+      margin-top: 24px;
+      padding-left: 30px;
+
+      @media (max-width: $tablet) {
+        padding-left: 26px;
+      }
+    }
+
+    &__item {
+      &::marker {
+        font-size: 20px;
+
+        @media (max-width: $tablet) {
+          font-size: 14px;
+        }
+      }
+    }
+
+    &__link {
+      position: relative;
+      margin-top: auto;
+      padding: 6px 60px 6px 0;
+      border-radius: 50px;
+      width: fit-content;
+      color: $white;
+      transition: all 0.3s ease;
+
+      &::before {
+        content: url(/assets/img/svg/arrow-white.svg);
+        position: absolute;
+        right: 20px;
+        display: block;
+        width: 22px;
+        height: 26px;
+      }
+    }
+
+    &:hover .card__link {
+      padding-left: 20px;
+      background-color: $green400;
+
+      @media (max-width: $tablet) {
+        padding-left: 0px;
+        background-color: transparent;
+      }
+    }
+
+    &:active .card__link {
+      background-color: $orange200;
+
+      @media (max-width: $tablet) {
+        background-color: transparent;
+      }
+    }
+
+    &__social {
+      display: flex;
+      gap: 34px;
+
+      @media (max-width: $tablet) {
+        display: none;
+      }
+    }
+  }
+  .social {
+    &__link {
+      border-bottom: 1px solid transparent;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        border-bottom: 1px solid $white;
+      }
+      &:active {
+        border-bottom: 1px solid $orange200;
+        color: $orange200;
+      }
+    }
+  }
+}

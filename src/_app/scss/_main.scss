@@ -1,0 +1,130 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  font-family: $fontName01;
+  background-color: $beige100;
+}
+
+* {
+  outline: none !important;
+}
+
+nav {
+  ul,
+  li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+}
+
+button {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+.container {
+  max-width: 1270px;
+  margin: 0 auto;
+  padding-left: 50px;
+  padding-right: 50px;
+  position: relative;
+
+  @media (max-width: $desktop) {
+    padding-left: 52px;
+    padding-right: 52px;
+  }
+
+  @media (max-width: $tablet) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.section {
+  margin-top: 134px;
+
+   @media (max-width: $tablet) {
+      margin-top: 74px;
+    }
+
+  &-title {
+    font-weight: 700;
+    font-size: 59px;
+    line-height: 124%;
+    color: $black;
+
+    @media (max-width: $tablet) {
+      font-size: 34px;
+      line-height: 112%;
+      letter-spacing: 0.02em;
+    }
+  }
+
+  &-subtitle {
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 122%;
+    color: $black;
+    @media (max-width: $tablet) {
+      font-size: 23px;
+      line-height: 120%;
+      letter-spacing: 0.04em;
+    }
+  }
+}
+
+.p-big {
+  font-weight: 700;
+  font-size: 23px;
+  line-height: 122%;
+  @media (max-width: $tablet) {
+    font-size: 16px;
+    line-height: 142%;
+  }
+}
+
+.p-normal {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 142%;
+  @media (max-width: $tablet) {
+    font-size: 16px;
+    line-height: 142%;
+  }
+}
+
+.p-small {
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 142%;
+  @media (max-width: $tablet) {
+    font-size: 16px;
+    line-height: 142%;
+    letter-spacing: -0.01em;
+  }
+}

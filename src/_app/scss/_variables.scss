@@ -1,0 +1,31 @@
+$white: #ffffff;
+$black: #1b1f2b;
+
+$beige100: #f9f7f4;
+$beige200: #f4f0e9;
+
+$gray100: #f1f3f2;
+$gray200: #d9dfdb;
+$gray300: #a6a6a6;
+
+$orange100: #f8e6be;
+$orange200: #efa501;
+
+$green100: #e0f0e5;
+$green300: #3b7e7b;
+$green200: #627f7e;
+$green400: #286562;
+
+$fontPath: "/assets/fonts" !default;
+/*
+Fonts mast be next file path - FontName/FontName-Weight.woff
+*/
+$fontName01: "Roboto" !default;
+$fontVersion01: "1" !default;
+$fontFamilies01: Regular, Medium, Bold;
+$fontWeights01: 400, 500, 700;
+$fontStyles01: normal, normal, normal;
+
+$mobile: 767px;
+$tablet: 1023px;
+$desktop: 1269px; 

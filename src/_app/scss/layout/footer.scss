@@ -1,0 +1,45 @@
+.footer {
+  background-color: $beige200;
+
+  &__container {
+    min-height: 88px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: $tablet) {
+      flex-direction: column;
+      padding: 20px;
+    }
+  }
+
+  &__text {
+    color: $gray300;
+  }
+
+  .social {
+    display: flex;
+    gap: 24px;
+
+    @media (max-width: $tablet) {
+      margin-top: 10px;
+      gap: 14px;
+    }
+
+    &__link {
+      display: flex;
+      align-items: center;
+    }
+
+    &__icon {
+      display: inline-block;
+      margin-right: 10px;
+
+      @media (max-width: $tablet) {
+        margin-right: 4px;
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
