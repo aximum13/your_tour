@@ -152,6 +152,10 @@
             display: block;
             width: 22px;
             height: 26px;
+
+            @media (max-width: $tablet) {
+              top: 8px;
+            }
           }
         }
       }
