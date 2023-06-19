@@ -93,6 +93,10 @@
       flex-direction: column;
       text-align: left;
 
+      @media (max-width: $tablet) {
+        flex: 0 0 47.9%;
+      }
+
       @media (max-width: $mobile) {
         flex: 0 0 auto;
       }
@@ -124,6 +128,29 @@
       background-color: $beige100;
       color: $black;
       transition: all 0.3s ease-in-out;
+
+      &::-webkit-calendar-picker-indicator {
+        opacity: 0;
+      }
+
+      &::-webkit-datetime-edit-day-field {
+        color: $gray300;
+        text-transform: uppercase;
+      }
+
+      &::-webkit-datetime-edit-month-field {
+        color: $gray300;
+        text-transform: uppercase;
+      }
+
+      &::-webkit-datetime-edit-year-field {
+        color: $gray300;
+        text-transform: uppercase;
+      }
+
+      &::-webkit-datetime-edit-text {
+        color: $gray300;
+      }
 
       @media (max-width: $tablet) {
         padding: 10px;
@@ -186,7 +213,7 @@
           width: 12px;
           height: 12px;
           background-color: $black;
-          
+
           @media (max-width: $tablet) {
             top: 5px;
             left: 5px;

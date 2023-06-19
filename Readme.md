@@ -1,5 +1,7 @@
 # Project name
 
+Used npm v 10.24.1 & ruby v 2.7.2
+
 ## installation
 1. You’ll need to have **Ruby** and **Bundler** installed(https://jekyllrb.com/docs/installation/)
 2. Install Ruby dependences `bundle install`

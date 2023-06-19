@@ -17,10 +17,17 @@ export class Menu {
           } else {
             header.classList.remove("no-fixed");
           }
-        }
+        }  
       },
       { passive: true }
     );
+
+    window.addEventListener("resize", function () {
+      if (outerWidth < 1023) {
+        header.classList.remove("no-fixed");
+        header.classList.remove("fixed");
+      }
+    });
 
     for (let link of anchorLinks) {
       link.addEventListener("click", function (e) {

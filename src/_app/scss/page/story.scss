@@ -208,11 +208,33 @@
     &__link {
       position: relative;
       margin-top: auto;
-      padding: 6px 60px 6px 0;
+      padding: 6px 60px 6px 20px;
+      margin-left: -20px;
       border-radius: 50px;
       width: fit-content;
       color: $white;
       transition: all 0.3s ease;
+
+      @media (max-width: $tablet) {
+        margin-left: 0;
+        padding-left: 0;
+      }
+
+      &:hover {
+        background-color: $green400;
+
+        @media (max-width: $tablet) {
+          background-color: transparent;
+        }
+      }
+
+      &:active {
+        background-color: $orange200;
+
+        @media (max-width: $tablet) {
+          background-color: transparent;
+        }
+      }
 
       &::before {
         content: url(/assets/img/svg/arrow-white.svg);
@@ -222,27 +244,9 @@
         width: 22px;
         height: 26px;
 
-         @media (max-width: $tablet) {
-              top: 8px;
-            }
-      }
-    }
-
-    &:hover .card__link {
-      padding-left: 20px;
-      background-color: $green400;
-
-      @media (max-width: $tablet) {
-        padding-left: 0px;
-        background-color: transparent;
-      }
-    }
-
-    &:active .card__link {
-      background-color: $orange200;
-
-      @media (max-width: $tablet) {
-        background-color: transparent;
+        @media (max-width: $tablet) {
+          top: 8px;
+        }
       }
     }
 

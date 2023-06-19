@@ -139,7 +139,8 @@
         &__link {
           position: relative;
           margin-top: auto;
-          padding: 6px 60px 6px 0;
+          padding: 6px 60px 6px 20px;
+          margin-left: -20px;
           border-radius: 50px;
           width: fit-content;
           color: $white;
@@ -161,10 +162,9 @@
       }
       &:hover .card__link {
         background-color: $green400;
-        padding-left: 20px;
+
         @media (max-width: $tablet) {
           background-color: transparent;
-          padding-left: 0px;
         }
       }
 

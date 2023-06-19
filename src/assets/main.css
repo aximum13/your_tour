@@ -462,7 +462,8 @@ template {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 206px; }
+    padding-top: 206px;
+    padding-bottom: 50px; }
 @media (max-width: 1023px) {
       .hero__container {
         padding-top: 140px; } }
@@ -475,6 +476,11 @@ template {
     letter-spacing: 0.02em;
     color: #ffffff; }
 @media (max-width: 1023px) {
+      .hero__title {
+        font-size: 44px;
+        line-height: 112%;
+        letter-spacing: 0.02em; } }
+@media (max-width: 767px) {
       .hero__title {
         font-size: 34px;
         line-height: 112%;
@@ -611,7 +617,8 @@ template {
 .tour .tabs__card .card__link {
       position: relative;
       margin-top: auto;
-      padding: 6px 60px 6px 0;
+      padding: 6px 60px 6px 20px;
+      margin-left: -20px;
       border-radius: 50px;
       width: -webkit-fit-content;
       width: -moz-fit-content;
@@ -625,13 +632,14 @@ template {
         display: block;
         width: 22px;
         height: 26px; }
+@media (max-width: 1023px) {
+          .tour .tabs__card .card__link::before {
+            top: 8px; } }
 .tour .tabs__card:hover .card__link {
-      background-color: #286562;
-      padding-left: 20px; }
+      background-color: #286562; }
 @media (max-width: 1023px) {
         .tour .tabs__card:hover .card__link {
-          background-color: transparent;
-          padding-left: 0px; } }
+          background-color: transparent; } }
 .tour .tabs__card:active .card__link {
       background-color: #efa501; }
 @media (max-width: 1023px) {
@@ -724,6 +732,9 @@ template {
     display: flex;
     flex-direction: column;
     text-align: left; }
+@media (max-width: 1023px) {
+      .request .form__label {
+        flex: 0 0 47.9%; } }
 @media (max-width: 767px) {
       .request .form__label {
         flex: 0 0 auto; } }
@@ -745,6 +756,19 @@ template {
     background-color: #f9f7f4;
     color: #1b1f2b;
     transition: all 0.3s ease-in-out; }
+.request .form__input::-webkit-calendar-picker-indicator {
+      opacity: 0; }
+.request .form__input::-webkit-datetime-edit-day-field {
+      color: #a6a6a6;
+      text-transform: uppercase; }
+.request .form__input::-webkit-datetime-edit-month-field {
+      color: #a6a6a6;
+      text-transform: uppercase; }
+.request .form__input::-webkit-datetime-edit-year-field {
+      color: #a6a6a6;
+      text-transform: uppercase; }
+.request .form__input::-webkit-datetime-edit-text {
+      color: #a6a6a6; }
 @media (max-width: 1023px) {
       .request .form__input {
         padding: 10px; } }
@@ -833,7 +857,8 @@ template {
         height: 12px; }
 @media (max-width: 1023px) {
           .request .form__input_checkbox:checked + span::after {
-            left: 4px; } }
+            left: 4px;
+            top: -2px; } }
 .request .form__input:hover {
       background-color: #f4f0e9; }
 .request .form__input.focus-visible {
@@ -1217,13 +1242,28 @@ template {
 .story .card__link {
     position: relative;
     margin-top: auto;
-    padding: 6px 60px 6px 0;
+    padding: 6px 60px 6px 20px;
+    margin-left: -20px;
     border-radius: 50px;
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
     color: #ffffff;
     transition: all 0.3s ease; }
+@media (max-width: 1023px) {
+      .story .card__link {
+        margin-left: 0;
+        padding-left: 0; } }
+.story .card__link:hover {
+      background-color: #286562; }
+@media (max-width: 1023px) {
+        .story .card__link:hover {
+          background-color: transparent; } }
+.story .card__link:active {
+      background-color: #efa501; }
+@media (max-width: 1023px) {
+        .story .card__link:active {
+          background-color: transparent; } }
 .story .card__link::before {
       content: url(/assets/img/svg/arrow-white.svg);
       position: absolute;
@@ -1231,18 +1271,9 @@ template {
       display: block;
       width: 22px;
       height: 26px; }
-.story .card:hover .card__link {
-    padding-left: 20px;
-    background-color: #286562; }
 @media (max-width: 1023px) {
-      .story .card:hover .card__link {
-        padding-left: 0px;
-        background-color: transparent; } }
-.story .card:active .card__link {
-    background-color: #efa501; }
-@media (max-width: 1023px) {
-      .story .card:active .card__link {
-        background-color: transparent; } }
+        .story .card__link::before {
+          top: 8px; } }
 .story .card__social {
     display: flex;
     grid-gap: 34px;
@@ -1346,12 +1377,17 @@ p {
   position: relative; }
 @media (max-width: 1269px) {
     .container {
+      max-width: 1022px;
       padding-left: 52px;
       padding-right: 52px; } }
 @media (max-width: 1023px) {
     .container {
+      max-width: 728px;
       padding-left: 20px;
       padding-right: 20px; } }
+@media (max-width: 767px) {
+    .container {
+      max-width: 360px; } }
 .section {
   margin-top: 134px; }
 @media (max-width: 1023px) {
@@ -1362,7 +1398,7 @@ p {
     font-size: 59px;
     line-height: 124%;
     color: #1b1f2b; }
-@media (max-width: 1023px) {
+@media (max-width: 767px) {
       .section-title {
         font-size: 34px;
         line-height: 112%;
@@ -1372,7 +1408,7 @@ p {
     font-size: 35px;
     line-height: 122%;
     color: #1b1f2b; }
-@media (max-width: 1023px) {
+@media (max-width: 767px) {
       .section-subtitle {
         font-size: 23px;
         line-height: 120%;
@@ -1381,7 +1417,7 @@ p {
   font-weight: 700;
   font-size: 23px;
   line-height: 122%; }
-@media (max-width: 1023px) {
+@media (max-width: 767px) {
     .p-big {
       font-size: 16px;
       line-height: 142%; } }
@@ -1389,7 +1425,7 @@ p {
   font-weight: 400;
   font-size: 20px;
   line-height: 142%; }
-@media (max-width: 1023px) {
+@media (max-width: 767px) {
     .p-normal {
       font-size: 16px;
       line-height: 142%; } }
@@ -1397,7 +1433,7 @@ p {
   font-weight: 400;
   font-size: 17px;
   line-height: 142%; }
-@media (max-width: 1023px) {
+@media (max-width: 767px) {
     .p-small {
       font-size: 16px;
       line-height: 142%;

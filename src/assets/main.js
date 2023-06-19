@@ -325,6 +325,12 @@ var Menu = /*#__PURE__*/function () {
       }, {
         passive: true
       });
+      window.addEventListener("resize", function () {
+        if (outerWidth < 1023) {
+          header.classList.remove("no-fixed");
+          header.classList.remove("fixed");
+        }
+      });
 
       var _iterator = _createForOfIteratorHelper(anchorLinks),
           _step;
