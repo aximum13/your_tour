@@ -30,6 +30,8 @@
   }
 
   &__card {
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -37,9 +39,36 @@
     min-height: 568px;
     border-radius: 50px;
     color: $white;
-    background-repeat: no-repeat;
     text-align: left;
+    overflow: hidden;
     transition: all 0.3s ease-in-out;
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      border-radius: 50px;
+      background-image: linear-gradient(
+        270deg,
+        rgba(0, 0, 0, 0) 0.01%,
+        rgba(0, 0, 0, 0.2) 100%
+      );
+      @media (max-width: $tablet) {
+        border-radius: 20px;
+      }
+    }
+
+    &:hover .card__img {
+      transform: scale(1.2);
+
+      @media (max-width: $tablet) {
+        transform: none;
+      }
+    }
 
     @media (max-width: $desktop) {
       padding-bottom: 54px;
@@ -50,106 +79,27 @@
       border-radius: 20px;
       min-height: 454px;
     }
-
-    &_1 {
-      background-image: linear-gradient(
-          270deg,
-          rgba(0, 0, 0, 0) 0.01%,
-          rgba(0, 0, 0, 0.2) 100%
-        ),
-        url(/assets/img/story-img-1.jpg);
-
-      background-size: 100% 150%;
-      background-position: center;
-
-      &:hover {
-        background-size: 120% 170%;
-      }
-
-      @media (max-width: $desktop) {
-        background-size: 100% 116%;
-        background-position: center;
-
-        &:hover {
-          background-size: 120% 136%;
-        }
-      }
-
-      @media (max-width: $tablet) {
-        background-size: cover;
-
-        &:hover {
-          background-size: cover;
-        }
-      }
-    }
-    &_2 {
-      background-image: linear-gradient(
-          270deg,
-          rgba(0, 0, 0, 0) 0.01%,
-          rgba(0, 0, 0, 0.2) 100%
-        ),
-        url(/assets/img/story-img-2.jpg);
-
-      background-size: 100% 140%;
-      background-position: center;
-
-      &:hover {
-        background-size: 120% 160%;
-      }
-
-      @media (max-width: $desktop) {
-        background-size: 100% 108%;
-        background-position: center;
-
-        &:hover {
-          background-size: 120% 128%;
-        }
-      }
-
-      @media (max-width: $tablet) {
-        background-size: cover;
-
-        &:hover {
-          background-size: cover;
-        }
-      }
-    }
-    &_3 {
-      background-image: linear-gradient(
-          270deg,
-          rgba(0, 0, 0, 0) 0.01%,
-          rgba(0, 0, 0, 0.2) 100%
-        ),
-        url(/assets/img/story-img-3.jpg);
-      background-size: 100% 140%;
-      background-position: center;
-
-      &:hover {
-        background-size: 120% 160%;
-      }
-
-      @media (max-width: $desktop) {
-        background-size: 100% 106%;
-        background-position: center;
-
-        &:hover {
-          background-size: 120% 126%;
-        }
-      }
-
-      @media (max-width: $tablet) {
-        background-size: cover;
-
-        &:hover {
-          background-size: cover;
-        }
-      }
-    }
   }
 
   .card {
+    &__img {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+      border-radius: 50px;
+      transition: all 0.3s ease-in-out;
+
+      @media (max-width: $tablet) {
+        border-radius: 20px;
+      }
+    }
+
     &__group {
+      position: relative;
+      z-index: 2;
       display: flex;
       justify-content: space-between;
       &_top {

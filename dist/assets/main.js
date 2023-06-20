@@ -178,9 +178,6 @@ window.addEventListener("DOMContentLoaded", function () {
 });
 
 function init() {
-  /**
-   * Global
-   */
   home.init();
 }
 
@@ -199,8 +196,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var core_js_modules_es_object_define_property__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
 /* harmony import */ var core_js_modules_es_object_define_property__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_define_property__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _page_tabs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/page/tabs */ "./src/_app/js/page/tabs.js");
-/* harmony import */ var _page_select__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/page/select */ "./src/_app/js/page/select.js");
-/* harmony import */ var _page_menu__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/page/menu */ "./src/_app/js/page/menu.js");
+/* harmony import */ var _page_menu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/page/menu */ "./src/_app/js/page/menu.js");
 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -209,7 +205,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-
+ // import { Select } from "@/page/select";
 
 
 var Home = /*#__PURE__*/function () {
@@ -221,10 +217,10 @@ var Home = /*#__PURE__*/function () {
     key: "init",
     value: function init() {
       var tabs = new _page_tabs__WEBPACK_IMPORTED_MODULE_1__["Tabs"]();
-      tabs.init();
-      var select = new _page_select__WEBPACK_IMPORTED_MODULE_2__["Select"]();
-      select.init();
-      var menu = new _page_menu__WEBPACK_IMPORTED_MODULE_3__["Menu"]();
+      tabs.init(); // const select = new Select();
+      // select.init();
+
+      var menu = new _page_menu__WEBPACK_IMPORTED_MODULE_2__["Menu"]();
       menu.init();
     }
   }]);
@@ -383,50 +379,6 @@ var Menu = /*#__PURE__*/function () {
 
 /***/ }),
 
-/***/ "./src/_app/js/page/select.js":
-/*!************************************!*\
-  !*** ./src/_app/js/page/select.js ***!
-  \************************************/
-/*! exports provided: Select */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Select", function() { return Select; });
-/* harmony import */ var core_js_modules_es_object_define_property__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
-/* harmony import */ var core_js_modules_es_object_define_property__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_define_property__WEBPACK_IMPORTED_MODULE_0__);
-
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-var Select = /*#__PURE__*/function () {
-  function Select() {
-    _classCallCheck(this, Select);
-  }
-
-  _createClass(Select, [{
-    key: "init",
-    value: function init() {
-      var select = document.querySelector(".form__input_select");
-      var btnReset = document.querySelector(".form__btn_reset");
-      select.addEventListener("change", function () {
-        select.style.color = "#1B1F2B";
-      });
-      btnReset.addEventListener("click", function () {
-        select.style.color = "#a6a6a6";
-      });
-    }
-  }]);
-
-  return Select;
-}();
-
-/***/ }),
-
 /***/ "./src/_app/js/page/tabs.js":
 /*!**********************************!*\
   !*** ./src/_app/js/page/tabs.js ***!
@@ -462,18 +414,12 @@ var Tabs = /*#__PURE__*/function () {
     key: "init",
     value: function init() {
       var tabsBtn = document.querySelectorAll(".tabs__item");
-      var tabsItem = document.querySelectorAll(".tabs__block");
       tabsBtn.forEach(function (element) {
         element.addEventListener("click", function (e) {
-          var path = e.currentTarget.dataset.path;
           tabsBtn.forEach(function (btn) {
             btn.classList.remove("tabs__item_active");
           });
           e.currentTarget.classList.add("tabs__item_active");
-          tabsItem.forEach(function (element) {
-            element.classList.remove("tabs__block_active");
-          });
-          document.querySelector("[data-target=\"".concat(path, "\"]")).classList.add("tabs__block_active");
         });
       });
     }

@@ -52,7 +52,7 @@
     }
 
     &__block {
-      display: none;
+      display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 30px;
@@ -60,13 +60,12 @@
       @media (max-width: $desktop) {
         gap: 18px;
       }
-
-      &_active {
-        display: flex;
-      }
     }
 
     &__card {
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
       flex: 0 0 31.6%;
       display: flex;
       justify-content: space-between;
@@ -75,38 +74,43 @@
       border-radius: 50px;
       min-height: 530px;
       text-align: left;
-      background-repeat: no-repeat;
-      background-size: 200% 100%;
-      background-position: center;
-      transition: background-size 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
 
-      &:hover {
-        background-size: 220% 120%;
+      @media (max-width: $tablet) {
+        border-radius: 20px;
       }
 
-      &_vertical {
-        background-size: 100% 100%;
+      &::before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        border-radius: 50px;
+        background-image: linear-gradient(
+          360deg,
+          rgba(0, 0, 0, 0.4) 0%,
+          rgba(0, 0, 0, 0.06) 48.44%,
+          rgba(0, 0, 0, 0.5) 100%
+        );
 
-        &:hover {
-          background-size: 120% 120%;
+        @media (max-width: $tablet) {
+          border-radius: 20px;
+        }
+      }
+
+      &:hover .card__img {
+        transform: scale(1.2);
+
+        @media (max-width: $tablet) {
+          transform: none;
         }
       }
 
       @media (max-width: $desktop) {
         flex: 0 0 49%;
-        background-size: 180% 100%;
-
-        &:hover {
-          background-size: 200% 120%;
-        }
-
-        &_vertical {
-          background-size: 100% 126%;
-
-          &:hover {
-            background-size: 120% 146%;
-          }
-        }
       }
 
       @media (max-width: $tablet) {
@@ -114,12 +118,6 @@
         padding: 24px 24px 20px;
         border-radius: 20px;
         min-height: 318px;
-        background-size: cover;
-        background-position: center;
-
-        &:hover {
-          background-size: cover;
-        }
       }
 
       @media (max-width: $mobile) {
@@ -127,6 +125,26 @@
       }
 
       .card {
+        &__img {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          top: 0;
+          left: 0;
+          object-fit: cover;
+          border-radius: 50px;
+          transition: all 0.3s ease-in-out;
+
+          @media (max-width: $tablet) {
+            border-radius: 20px;
+          }
+        }
+
+        &__group {
+          position: relative;
+          z-index: 1;
+        }
+
         &__title {
           color: $white;
         }
@@ -138,6 +156,7 @@
 
         &__link {
           position: relative;
+          z-index: 1;
           margin-top: auto;
           padding: 6px 60px 6px 20px;
           margin-left: -20px;
@@ -174,66 +193,6 @@
         @media (max-width: $tablet) {
           background-color: transparent;
         }
-      }
-
-      &_1 {
-        background-image: linear-gradient(
-            360deg,
-            rgba(0, 0, 0, 0.4) 0%,
-            rgba(0, 0, 0, 0.06) 48.44%,
-            rgba(0, 0, 0, 0.5) 100%
-          ),
-          url(/assets/img/tour-img-1.jpg);
-      }
-
-      &_2 {
-        background-image: linear-gradient(
-            360deg,
-            rgba(0, 0, 0, 0.4) 0%,
-            rgba(0, 0, 0, 0.06) 48.44%,
-            rgba(0, 0, 0, 0.5) 100%
-          ),
-          url(/assets/img/tour-img-2.jpg);
-      }
-
-      &_3 {
-        background-image: linear-gradient(
-            360deg,
-            rgba(0, 0, 0, 0.4) 0%,
-            rgba(0, 0, 0, 0.06) 48.44%,
-            rgba(0, 0, 0, 0.5) 100%
-          ),
-          url(/assets/img/tour-img-3.jpg);
-      }
-
-      &_4 {
-        background-image: linear-gradient(
-            360deg,
-            rgba(0, 0, 0, 0.4) 0%,
-            rgba(0, 0, 0, 0.06) 48.44%,
-            rgba(0, 0, 0, 0.5) 100%
-          ),
-          url(/assets/img/tour-img-4.jpg);
-      }
-
-      &_5 {
-        background-image: linear-gradient(
-            360deg,
-            rgba(0, 0, 0, 0.4) 0%,
-            rgba(0, 0, 0, 0.06) 48.44%,
-            rgba(0, 0, 0, 0.5) 100%
-          ),
-          url(/assets/img/tour-img-5.jpg);
-      }
-
-      &_6 {
-        background-image: linear-gradient(
-            360deg,
-            rgba(0, 0, 0, 0.4) 0%,
-            rgba(0, 0, 0, 0.06) 48.44%,
-            rgba(0, 0, 0, 0.5) 100%
-          ),
-          url(/assets/img/tour-img-6.jpg);
       }
     }
   }

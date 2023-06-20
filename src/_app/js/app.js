@@ -9,8 +9,5 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 function init() {
-  /**
-   * Global
-   */
   home.init();
 }
