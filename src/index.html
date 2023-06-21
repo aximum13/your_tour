@@ -86,13 +86,13 @@ layout: base
           <input type="text" placeholder="Введите Ваше имя" class="form__input p-normal">
         </label>
         <label class="form__label p-normal">Направление
-          <select class="form__input form__input_select p-normal">
+          <select required class="form__input form__input_select p-normal">
             <option class="form__option form__option_disabled" value="" disabled selected hidden>Куда хотите ехать
             </option>
-            <option class="form__option" value="">Север</option>
-            <option class="form__option" value="">Восток</option>
-            <option class="form__option" value="">Запад</option>
-            <option class="form__option" value="">Юг</option>
+            <option class="form__option" value="Север">Север</option>
+            <option class="form__option" value="Восток">Восток</option>
+            <option class="form__option" value="Запад">Запад</option>
+            <option class="form__option" value="Юг">Юг</option>
           </select>
         </label>
       </div>
@@ -106,10 +106,10 @@ layout: base
       </div>
       <div class="form__block">
         <label class="form__label p-normal">Дата от
-          <input type="date" placeholder="ДД.ММ.ГГГГ" class="form__input p-normal">
+          <input type="date" required placeholder="ДД.ММ.ГГГГ" class="form__input form__input_date p-normal">
         </label>
         <label class="form__label p-normal">Дата до
-          <input type="date" placeholder="ДД.ММ.ГГГГ" class="form__input p-normal">
+          <input type="date" required placeholder="ДД.ММ.ГГГГ" class="form__input form__input_date p-normal">
         </label>
       </div>
       <div class="form__block">

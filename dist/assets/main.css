@@ -714,16 +714,11 @@ template {
 .request .form__input::-webkit-calendar-picker-indicator {
       opacity: 0; }
 .request .form__input::-webkit-datetime-edit-day-field {
-      text-transform: uppercase;
-      opacity: 0; }
+      text-transform: uppercase; }
 .request .form__input::-webkit-datetime-edit-month-field {
-      text-transform: uppercase;
-      opacity: 0; }
+      text-transform: uppercase; }
 .request .form__input::-webkit-datetime-edit-year-field {
-      text-transform: uppercase;
-      opacity: 0; }
-.request .form__input::-webkit-datetime-edit-text {
-      opacity: 0; }
+      text-transform: uppercase; }
 @media (max-width: 1023px) {
       .request .form__input {
         padding: 10px; } }
@@ -737,6 +732,14 @@ template {
       background-position: 96% center;
       color: #a6a6a6;
       cursor: pointer; }
+.request .form__input_select:required:invalid {
+        color: #a6a6a6; }
+.request .form__input_select:required:not(:invalid) {
+        color: #1b1f2b; }
+.request .form__input_date:required:invalid {
+      color: #a6a6a6; }
+.request .form__input_date:required:not(:invalid) {
+      color: #1b1f2b; }
 @media (max-width: 1023px) {
       .request .form__input_comment {
         min-height: 132px; } }

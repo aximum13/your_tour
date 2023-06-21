@@ -7,7 +7,7 @@ export class Menu {
     window.addEventListener(
       "scroll",
       function () {
-        if (outerWidth > 1023) {
+        if (outerWidth > 1023 || (outerWidth > 450 && outerWidth < 1023)) {
           if (window.scrollY > 200 && window.scrollY < 450) {
             header.classList.add("no-fixed");
             header.classList.remove("fixed");
@@ -17,13 +17,13 @@ export class Menu {
           } else {
             header.classList.remove("no-fixed");
           }
-        }  
+        }
       },
       { passive: true }
     );
 
     window.addEventListener("resize", function () {
-      if (outerWidth < 1023) {
+      if (outerWidth < 450) {
         header.classList.remove("no-fixed");
         header.classList.remove("fixed");
       }

@@ -135,24 +135,20 @@
       &::-webkit-datetime-edit-day-field {
         // color: $gray300;
         text-transform: uppercase;
-        opacity: 0;
       }
 
       &::-webkit-datetime-edit-month-field {
         // color: $gray300;
         text-transform: uppercase;
-        opacity: 0;
       }
 
       &::-webkit-datetime-edit-year-field {
         // color: $gray300;
         text-transform: uppercase;
-        opacity: 0;
       }
 
       &::-webkit-datetime-edit-text {
         // color: $gray300;
-        opacity: 0;
       }
 
       @media (max-width: $tablet) {
@@ -169,6 +165,24 @@
         background-position: 96% center;
         color: $gray300;
         cursor: pointer;
+
+        &:required:invalid {
+          color: $gray300;
+        }
+
+        &:required:not(:invalid) {
+          color: $black;
+        }
+      }
+
+      &_date {
+        &:required:invalid {
+          color: $gray300;
+        }
+
+        &:required:not(:invalid) {
+          color: $black;
+        }
       }
 
       &_comment {
@@ -301,7 +315,7 @@
 
     &__option {
       color: $black;
-      &:checked{
+      &:checked {
         color: $black;
       }
     }

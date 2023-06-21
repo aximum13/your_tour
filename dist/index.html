@@ -8,7 +8,7 @@
   <meta name="keywords" content="Путешествия, походы, сплавы, велопрогулки">
   <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no" />
   <link href="./assets/vendor.css" type="text/css" rel="stylesheet" />
-  <link href="./assets/main.css?v=01" type="text/css" rel="stylesheet" />
+  <link href="./assets/main.css?v=02" type="text/css" rel="stylesheet" />
 </head>
 
 <body>
@@ -112,13 +112,13 @@
           <input type="text" placeholder="Введите Ваше имя" class="form__input p-normal">
         </label>
         <label class="form__label p-normal">Направление
-          <select class="form__input form__input_select p-normal">
+          <select required class="form__input form__input_select p-normal">
             <option class="form__option form__option_disabled" value="" disabled selected hidden>Куда хотите ехать
             </option>
-            <option class="form__option" value="">Север</option>
-            <option class="form__option" value="">Восток</option>
-            <option class="form__option" value="">Запад</option>
-            <option class="form__option" value="">Юг</option>
+            <option class="form__option" value="Север">Север</option>
+            <option class="form__option" value="Восток">Восток</option>
+            <option class="form__option" value="Запад">Запад</option>
+            <option class="form__option" value="Юг">Юг</option>
           </select>
         </label>
       </div>
@@ -132,10 +132,10 @@
       </div>
       <div class="form__block">
         <label class="form__label p-normal">Дата от
-          <input type="date" placeholder="ДД.ММ.ГГГГ" class="form__input p-normal">
+          <input type="date" required placeholder="ДД.ММ.ГГГГ" class="form__input form__input_date p-normal">
         </label>
         <label class="form__label p-normal">Дата до
-          <input type="date" placeholder="ДД.ММ.ГГГГ" class="form__input p-normal">
+          <input type="date" required placeholder="ДД.ММ.ГГГГ" class="form__input form__input_date p-normal">
         </label>
       </div>
       <div class="form__block">
@@ -339,7 +339,7 @@
 </footer>
 
   <script type="text/javascript" src="assets/vendor.js"></script>
-  <script type="text/javascript" src="assets/main.js?v=01"></script>
+  <script type="text/javascript" src="assets/main.js?v=02"></script>
 </body>
 
 </html>
